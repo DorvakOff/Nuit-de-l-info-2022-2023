@@ -1,0 +1,6 @@
+.idea
+target
+PixBot.iml
+/PixBot/logs/
+/PixBot/.env
+/PixBot/generated/
