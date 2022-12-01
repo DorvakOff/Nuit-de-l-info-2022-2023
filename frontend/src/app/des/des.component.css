@@ -1,0 +1,257 @@
+*{
+  transform-style: preserve-3d;
+}
+
+.cube{
+  margin: auto;
+  margin-top: 150px;
+  width: 200px;
+  height: 200px;
+  transform-origin: 50% 50%;
+  transform: rotateX(80deg) rotateZ(10deg);
+  transition: 0.2s ease-out;
+  cursor: pointer;
+}
+
+/* animation roulement de dé */
+
+.roulement{
+  animation: roulement 1s ease;
+}
+
+@keyframes roulement{
+  0% {transform: rotateX(0deg) rotateY(0deg);}
+  50% {transform: rotateX(-350deg) rotateY(542deg);}
+  100% {transform: rotateX(-720deg) rotateY(720deg);}
+}
+
+/* position du dé selon le résultat */
+
+.pos1{
+  transform: rotateX(-10deg) rotateY(-190deg);
+}
+
+.pos2{
+  transform: rotateX(-10deg) rotateY(80deg);
+}
+
+.pos3{
+  transform: rotateX(-100deg) rotateZ(-10deg);
+}
+
+.pos3{
+  transform: rotateX(-100deg) rotateZ(-10deg);
+}
+
+.pos5{
+  transform: rotateX(-10deg) rotateY(-100deg);
+}
+
+.pos6{
+  transform: rotateX(-10deg) rotateY(-15deg);
+}
+
+/* position des faces */
+
+
+.face{
+  position: relative;
+  height: 200px;
+  width: 200px;
+  background: #f9b73b;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.face:nth-child(1){
+  /*  transform-origin: center right;*/
+  transform: translate3d(0, 0, -100px) rotateY(180deg);
+}
+
+.face:nth-child(2){
+  /*  transform-origin: center right;*/
+  transform: translate3d(-50%, -100%, 0) rotateY(-90deg);
+}
+
+.face:nth-child(3){
+  transform: translate3d(50%, -200%, 0) rotateY(-90deg);
+}
+
+.face:nth-child(4){
+  transform: translate3d(0%, -300%, 100px);
+}
+
+.face:nth-child(5){
+  transform: translate3d(0%, -450%, 0px) rotateX(-90deg);
+}
+
+.face:nth-child(6){
+  transform: translate3d(0%, -450%, 0px) rotateX(-90deg);
+}
+
+/* position des points */
+
+
+.point{
+  background: white;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+}
+
+.un{
+  display: flex;
+}
+
+.un>.point{
+  margin: auto;
+}
+
+
+.six>.point:nth-child(1){
+  position: fixed;
+  top: 15%;
+  left: 10%;
+}
+
+.six>.point:nth-child(2){
+  position: fixed;
+  top: 45%;
+  left: 10%;
+}
+
+.six>.point:nth-child(3){
+  position: fixed;
+  top: 75%;
+  left: 10%;
+}
+
+.six>.point:nth-child(4){
+  position: fixed;
+  top: 15%;
+  right: 10%;
+}
+
+.six>.point:nth-child(5){
+  position: fixed;
+  top: 45%;
+  right: 10%;
+}
+
+.six>.point:nth-child(6){
+  position: fixed;
+  top: 75%;
+  right: 10%;
+}
+
+.deux>.point:nth-child(1){
+  position: fixed;
+  top: 20%;
+  left: 10%;
+}
+
+.deux>.point:nth-child(2){
+  position: fixed;
+  bottom: 20%;
+  right: 10%;
+}
+
+.trois>.point:nth-child(1){
+  position: fixed;
+  top: 20%;
+  left: 10%;
+}
+
+.trois>.point:nth-child(2){
+  position: fixed;
+  bottom: 45%;
+  right: 45%;
+}
+
+
+.trois>.point:nth-child(3){
+  position: fixed;
+  bottom: 20%;
+  right: 10%;
+}
+
+.quatre>.point:nth-child(1){
+  position: fixed;
+  top: 20%;
+  left: 10%;
+}
+
+.quatre>.point:nth-child(2){
+  position: fixed;
+  bottom: 20%;
+  left: 10%;
+}
+
+
+.quatre>.point:nth-child(3){
+  position: fixed;
+  top: 20%;
+  right: 10%;
+}
+
+.quatre>.point:nth-child(4){
+  position: fixed;
+  bottom: 20%;
+  right: 10%;
+}
+
+.cinq>.point:nth-child(4){
+  position: fixed;
+  bottom: 20%;
+  right: 10%;
+}
+
+.cinq>.point:nth-child(1){
+  position: fixed;
+  top: 20%;
+  left: 10%;
+}
+
+.cinq>.point:nth-child(2){
+  position: fixed;
+  bottom: 20%;
+  left: 10%;
+}
+
+
+.cinq>.point:nth-child(3){
+  position: fixed;
+  top: 20%;
+  right: 10%;
+}
+
+.cinq>.point:nth-child(4){
+  position: fixed;
+  bottom: 20%;
+  right: 10%;
+}
+
+.cinq>.point:nth-child(5){
+  position: fixed;
+  bottom: 45%;
+  right: 45%;
+}
+
+#res{
+  position: fixed;
+  height: 75px;
+  width: 75px;
+
+  border-radius: 5px;
+  top: 450px;
+  right:50%;
+  transform: translate(37.5px)
+}
+
+#res>span{
+  font-family: cursive;
+  font-size: 300%;
+  position: relative;
+  top:45%;
+  text-align: center;
+}
