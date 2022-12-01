@@ -7,6 +7,7 @@ import { PlateauComponent } from './plateau/plateau.component';
 import { CaseComponent } from './case/case.component';
 import { CarteComponent } from './carte/carte.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AccueilComponent } from './accueil/accueil.component';
     PlateauComponent,
     CaseComponent,
     CarteComponent,
-    AccueilComponent
+    AccueilComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
