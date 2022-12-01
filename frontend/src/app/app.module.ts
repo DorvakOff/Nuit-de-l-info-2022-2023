@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { PlateauComponent } from './plateau/plateau.component';
 import { CaseComponent } from './case/case.component';
 import { CarteComponent } from './carte/carte.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlateauComponent,
     CaseComponent,
-    CarteComponent
+    CarteComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,
