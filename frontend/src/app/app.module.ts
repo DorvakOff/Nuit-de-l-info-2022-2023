@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlateauComponent } from './plateau/plateau.component';
 import { CaseComponent } from './case/case.component';
+import { CarteComponent } from './carte/carte.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlateauComponent,
-    CaseComponent
+    CaseComponent,
+    CarteComponent
   ],
   imports: [
     BrowserModule,
