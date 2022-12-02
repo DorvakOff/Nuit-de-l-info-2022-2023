@@ -1,14 +1,15 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {GetDataQuestionService} from "../get-data-question.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-plateau',
   templateUrl: './plateau.component.html',
   styleUrls: ['./plateau.component.css']
 })
-export class PlateauComponent {
+export class PlateauComponent implements OnInit {
 
-  constructor() {
-  }
+  constructor(private questionService: GetDataQuestionService, private router: Router) {}
 
   res = 0;
 
@@ -19,4 +20,11 @@ export class PlateauComponent {
   count(nb: number = 64) {
     return Array(nb)
   }
+
+  ngOnInit(): void {
+    this.questionService.getQuestion().subscribe((value) => {
+
+    })
+  }
+
 }
