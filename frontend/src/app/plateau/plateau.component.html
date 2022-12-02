@@ -2,7 +2,7 @@
 
   <div class="d-flex justify-content-center align-items-center bg-success flex-column" id="base">
     <div id="plateau">
-      <div *ngFor=" let _ of count(64); let i = index" class="border border-dark">
+      <div *ngFor=" let _ of count(64); let i = index" class="border border-dark" style="  height: 65px; width: 65px; overflow: hidden;">
         <div *ngIf="(i >= 0 && i<8) || (i >= 16 && i<24) || (i >= 32 && i<40) || (i >= 48 && i<56)">
           <app-case [nbCase]="i+1"></app-case>
         </div>
