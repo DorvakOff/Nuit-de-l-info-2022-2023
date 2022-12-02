@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {CarteComponent} from "./carte/carte.component";
+import {Carte} from "./models/Carte";
 
 @Injectable({
   providedIn: 'root'
@@ -29,13 +29,13 @@ export class GetDataQuestionService {
    * Get the next question
    * if the game is not created, create it
    */
-  public getQuestion(): Observable<CarteComponent> {
+  public getQuestion(): Observable<Carte> {
     if (this.gameId === null) {
       this.createGame().subscribe(game => {
         this.gameId = game.gameId;
       });
     }
     let url = 'https://ndli.pixbot.me/question/pick?gameId=' + this.gameId;
-    return this.http.get<CarteComponent>(url);
+    return this.http.get<Carte>(url);
   }
 }
