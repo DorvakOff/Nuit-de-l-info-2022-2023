@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-case',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./case.component.css']
 })
 export class CaseComponent {
+  @Input() nbCase: number = 1;
 
 }

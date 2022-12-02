@@ -1,0 +1,9 @@
+#plateau {
+  display: grid;
+  grid: auto / auto auto auto auto auto auto auto auto;
+}
+
+#plateau > div {
+  width: 4em;
+  height: 3em;
+}
