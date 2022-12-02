@@ -10,7 +10,7 @@ export class DesComponent {
   @Output() resEvent = new EventEmitter<number>();
 
 
-  res: number = 0;
+  res: number = 4;
 
   constructor() {
   }

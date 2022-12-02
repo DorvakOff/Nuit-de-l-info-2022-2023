@@ -8,7 +8,7 @@ import {UserManagerService} from "../user-manager.service";
 })
 export class PlateauComponent implements OnInit {
 
-  res = 0;
+  res = 4;
 
   constructor(private questionService: GetDataQuestionService, private route: ActivatedRoute, private router: Router, userManager: UserManagerService) {
     if(!userManager.user) {
