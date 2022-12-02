@@ -7,6 +7,13 @@ import {Component} from '@angular/core';
 })
 export class PlateauComponent {
 
-    constructor() { }
+  constructor() {
+  }
+
+  res = 0;
+
+  updateRes(res: number) {
+    this.res = res;
+  }
 
 }
