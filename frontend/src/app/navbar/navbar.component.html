@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+      <a class="navbar-brand mt-2 mt-lg-0" routerLink="/">
         <img
           alt="MDB Logo"
           height="60"
@@ -16,6 +16,27 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/game">Jouer</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav right-items">
+        <!-- Avatar -->
+        <li *ngIf="userManager.user" class="nav-item user-avatar dropdown">
+          <div aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-bs-toggle="dropdown" id="dropdownAvatar" role="button" tabindex="0">
+            <img [src]="userManager.user.avatar"
+                 alt="Profile picture" class="avatar" draggable="false"
+                 loading="eager"/>
+            <span class="infos">
+              <span class="username">{{userManager.user.username}}#{{userManager.user.discriminator}}</span>
+            </span>
+          </div>
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="profileMenuLink">
+            <li>
+              <a class="dropdown-item logout-button" role="button" (click)="$event.preventDefault(); userManager.logout()" tabindex="0">Se déconnecter</a>
+            </li>
+          </ul>
+        </li>
+        <li *ngIf="!userManager.user" class="nav-item">
+          <button class="btn btn-outline-info" [disabled]="userManager.authLoading" (click)="navigationService.navigate('/login')">Login</button>
         </li>
       </ul>
     </div>

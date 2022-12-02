@@ -10,10 +10,16 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { DesComponent } from './des/des.component';
+import {LoginPageComponent} from "./login-page/login-page.component";
+import {BusyIndicatorComponent} from "./busy-indicator/busy-indicator.component";
+import {HttpClientModule} from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginPageComponent,
+    BusyIndicatorComponent,
     PlateauComponent,
     CaseComponent,
     CarteComponent,
@@ -24,7 +30,8 @@ import { DesComponent } from './des/des.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

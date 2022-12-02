@@ -1,0 +1,23 @@
+.right-items {
+  position: absolute;
+  right: 5%;
+}
+.right-items .user-avatar .avatar {
+  width: 50px;
+  border-radius: 10%;
+}
+.right-items .user-avatar .infos {
+  display: inline-block;
+  font-size: 12px;
+  margin-left: 5px;
+  position: relative;
+  top: 10px;
+}
+.right-items .user-avatar .infos .username {
+  color: #fff;
+  font-size: 16px;
+  top: -10px;
+  position: relative;
+}
+
+
