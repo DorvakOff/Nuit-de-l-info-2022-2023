@@ -5,6 +5,10 @@ import {Bonus} from "./Bonus";
 export class Joueur {
   public id: number = 0
   public name: string = ""
+
+  public avatarUrl: string = ""
+
+  public discriminator: string = ""
   public color: string = ""
   public position: number = 0
   public carte: Carte[] = []

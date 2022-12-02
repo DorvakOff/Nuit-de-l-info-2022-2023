@@ -2,23 +2,23 @@
 
   <div class="d-flex justify-content-center align-items-center bg-success flex-column" id="base">
     <div id="plateau">
-        <div *ngFor=" let _ of count(64); let i = index" class="border border-dark">
-          <div *ngIf="(i >= 0 && i<8) || (i >= 16 && i<24) || (i >= 32 && i<40) || (i >= 48 && i<56)">
-            <app-case [nbCase]="i+1"></app-case>
-          </div>
-          <div *ngIf="(i >= 8 && i<16)">
-            <app-case [nbCase]="(64-i)-40"></app-case>
-          </div>
-          <div *ngIf="(i >= 24 && i<32)">
-            <app-case [nbCase]="(64-i)-8"></app-case>
-          </div>
-          <div *ngIf="(i >= 40 && i<48)">
-            <app-case [nbCase]="(64-i)+24"></app-case>
-          </div>
-          <div *ngIf="(i >= 56 && i<64)">
-            <app-case [nbCase]="(64-i)+56"></app-case>
-          </div>
+      <div *ngFor=" let _ of count(64); let i = index" class="border border-dark">
+        <div *ngIf="(i >= 0 && i<8) || (i >= 16 && i<24) || (i >= 32 && i<40) || (i >= 48 && i<56)">
+          <app-case [nbCase]="i+1"></app-case>
         </div>
+        <div *ngIf="(i >= 8 && i<16)">
+          <app-case [nbCase]="(64-i)-40"></app-case>
+        </div>
+        <div *ngIf="(i >= 24 && i<32)">
+          <app-case [nbCase]="(64-i)-8"></app-case>
+        </div>
+        <div *ngIf="(i >= 40 && i<48)">
+          <app-case [nbCase]="(64-i)+24"></app-case>
+        </div>
+        <div *ngIf="(i >= 56 && i<64)">
+          <app-case [nbCase]="(64-i)+56"></app-case>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -27,6 +27,16 @@
     <p class="mt-5">{{res}}</p>
   </div>
 
-<!--  <app-carte [carte]=""></app-carte>-->
+  <div *ngIf="game">
+    <h2>Utilisateurs en ligne:</h2>
+    <ul style="list-style: none">
+      <li *ngFor="let player of game.players">
+        <p style="display: inline; margin-right: 10px">{{player.name}}</p>
+        <img [src]="player.avatarUrl" class="rounded" draggable="false" height="64px"/>
+      </li>
+    </ul>
+  </div>
+
+  <!--  <app-carte [carte]=""></app-carte>-->
 
 </section>
