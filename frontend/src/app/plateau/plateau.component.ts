@@ -29,10 +29,8 @@ export class PlateauComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.questionService.checkGame().subscribe(() => {
-      this.questionService.getQuestion().subscribe((exists) => {
+    this.questionService.checkGame().subscribe(exists => {
         if (!exists) this.router.navigateByUrl('/')
-      })
     }, () => {
       this.router.navigateByUrl('/')
     })
