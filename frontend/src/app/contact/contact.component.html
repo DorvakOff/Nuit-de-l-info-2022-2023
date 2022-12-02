@@ -1,0 +1,38 @@
+<section class="vh-100">
+  <div class="container-fluid">
+    <div class="d-flex flex-column justify-content-center align-items-center h-100 mt-5">
+      <h1 class="text-center m-5">Contactez-nous</h1>
+      <div class="align-items-center justify-content-center">
+        <form class="d-flex row g-3">
+          <div class="mb-3">
+            <div *ngIf="isSend" class="alert alert-success text-center" role="alert">
+              Le mail a bien été envoyé !
+            </div>
+            <label class="form-label" for="mail">Votre mail*</label>
+            <input (focusin)="mailIsFocused=true" (focusout)="mailIsFocused=false" class="form-control" [(ngModel)]="mail" name="mail" placeholder="Entrez votre mail" type="email" id="mail" required/>
+            <div *ngIf="!mailIsValid() && !mailIsFocused" class="text-danger">
+              Veuillez entrer un mail valide. <br> Exemple : arthur.poireau@gmail.com
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="mail">Sujet*</label>
+            <input (focusin)="sujectIsFocused=true" (focusout)="sujectIsFocused=false" class="form-control" [(ngModel)]="sujet" name="gameId" placeholder="Entrez le sujet" type="text"/>
+            <div *ngIf="!sujetIsValid() && !sujectIsFocused" class="text-danger">
+              Veuillez entrer un sujet valide, 12 caractères minimum.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="mail">Message*</label>
+            <input (focusin)="messageIsFocused=true" (focusout)="messageIsFocused=false" class="form-control" [(ngModel)]="message" name="message" placeholder="Entrez votre message" type="text"/>
+            <div *ngIf="!messageIsValid() && !messageIsFocused" class="text-danger">
+              Veuillez entrer un message valide, 12 caractères minimum.
+            </div>
+          </div>
+          <div class="mb-4 d-flex align-items-center justify-content-center">
+            <button [disabled]="!mailIsValid() || !sujetIsValid() || !messageIsValid()" (click)="sendMail()" class="btn btn-primary">Envoyer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
