@@ -13,8 +13,8 @@
         <div class="d-flex flex-column justify-content-center align-items-center text-center">
           <main class="px-3">
             <input [(ngModel)]="service.gameId" name="gameId" placeholder="Entrez un id de partie" type="text"/>
-            <a routerLink="/game" class="text-white text-decoration-none btn btn-primary m-3">Rejoindre
-              la partie</a>
+            <button [routerLink]="'/game/' + service.gameId" class="text-white text-decoration-none btn btn-primary m-3" [disabled]="!service.gameId">Rejoindre
+              la partie</button>
             <a class="text-white text-decoration-none btn btn-primary m-3" routerLink="/game">Créer une partie</a>
           </main>
         </div>

@@ -1,17 +1,19 @@
 import {Component, OnInit} from '@angular/core';
 import {GetDataQuestionService} from "../get-data-question.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-plateau',
-  templateUrl: './plateau.component.html',
-  styleUrls: ['./plateau.component.css']
+  selector: 'app-plateau', templateUrl: './plateau.component.html', styleUrls: ['./plateau.component.css']
 })
 export class PlateauComponent implements OnInit {
 
-  constructor(private questionService: GetDataQuestionService, private router: Router) {}
-
   res = 0;
+
+  constructor(private questionService: GetDataQuestionService, private route: ActivatedRoute, private router: Router) {
+    route.params.subscribe((params) => {
+      questionService.gameId = params['id']
+    });
+  }
 
   updateRes(res: number) {
     this.res = res;
@@ -22,8 +24,12 @@ export class PlateauComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.questionService.getQuestion().subscribe((value) => {
-
+    this.questionService.checkGame().subscribe(() => {
+      this.questionService.getQuestion().subscribe((exists) => {
+        if (!exists) this.router.navigateByUrl('/')
+      })
+    }, () => {
+      this.router.navigateByUrl('/')
     })
   }
 

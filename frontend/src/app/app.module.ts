@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DesComponent } from './des/des.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { CreateGameComponent } from './create-game/create-game.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {HttpClientModule} from "@angular/common/http";
     AccueilComponent,
     NavbarComponent,
     FooterComponent,
-    DesComponent
+    DesComponent,
+    CreateGameComponent
   ],
   imports: [
     BrowserModule,

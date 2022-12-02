@@ -20,6 +20,11 @@ export class GetDataQuestionService {
     return this.http.get<{ gameId: string }>(url);
   }
 
+  public checkGame(): Observable<boolean> {
+    let url = 'https://ndli.pixbot.me/game/exists?gameId=' + this.gameId;
+    return this.http.get<boolean>(url);
+  }
+
   /**
    * Get the next question
    * if the game is not created, create it
