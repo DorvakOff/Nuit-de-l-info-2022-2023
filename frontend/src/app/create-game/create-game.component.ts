@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {GetDataQuestionService} from "../get-data-question.service";
 import {Router} from "@angular/router";
 
@@ -7,17 +7,12 @@ import {Router} from "@angular/router";
   templateUrl: './create-game.component.html',
   styleUrls: ['./create-game.component.css']
 })
-export class CreateGameComponent implements OnInit{
+export class CreateGameComponent {
 
   constructor(private getDataQuestionService: GetDataQuestionService, private router: Router) {
     this.getDataQuestionService.createGame().subscribe(id => {
       this.router.navigateByUrl('/game/' + id);
     })
-  }
-
-
-  ngOnInit(): void {
-
   }
 
 }

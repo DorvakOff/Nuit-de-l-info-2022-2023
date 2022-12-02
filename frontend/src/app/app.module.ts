@@ -14,6 +14,7 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {LoginPageComponent} from "./login-page/login-page.component";
 import {BusyIndicatorComponent} from "./busy-indicator/busy-indicator.component";
+import {CreateGameComponent} from "./create-game/create-game.component";
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {BusyIndicatorComponent} from "./busy-indicator/busy-indicator.component"
     AccueilComponent,
     NavbarComponent,
     FooterComponent,
-    DesComponent
+    DesComponent,
+    CreateGameComponent
   ],
   imports: [
     BrowserModule,
