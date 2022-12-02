@@ -10,9 +10,10 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { DesComponent } from './des/des.component';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 import {LoginPageComponent} from "./login-page/login-page.component";
 import {BusyIndicatorComponent} from "./busy-indicator/busy-indicator.component";
-import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],

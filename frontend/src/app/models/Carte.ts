@@ -1,14 +1,16 @@
 export class Carte {
+  public question: String = "";
+  public answers: String[] = [];
+  public correctAnswer: number = 0;
+  public explication: String = "";
   public id: number = 0;
-  public description: string = "";
-  public question: string = "";
-  public reponses: string[] = [];
 
 
-  constructor(id: number, description: string, question: string, reponse: string[]) {
-    this.id = id;
-    this.description = description;
+  constructor(question: String, answers: String[], correctAnswer: number, explication: String, id: number) {
     this.question = question;
-    this.reponses = reponse;
+    this.answers = answers;
+    this.correctAnswer = correctAnswer;
+    this.explication = explication;
+    this.id = id;
   }
 }

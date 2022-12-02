@@ -1,11 +1,11 @@
-<div class="card m-5" style="width: 18rem;">
+<div class="card m-5" style="width: 18rem;" *ngIf="carte">
   <img alt="..." class="card-img-top" src="https://picsum.photos/200/100">
   <div class="card-body">
-    <h5 class="card-title">{{question}}</h5>
+    <h5 class="card-title">{{carte.question}}</h5>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{rep1}}</li>
-    <li class="list-group-item">{{rep2}}</li>
-    <li class="list-group-item">{{rep3}}</li>
+    <li class="list-group-item">{{carte.answers[0]}}</li>
+    <li class="list-group-item">{{carte.answers[1]}}</li>
+    <li class="list-group-item">{{carte.answers[2]}}</li>
   </ul>
 </div>

@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {UserManagerService} from "../user-manager.service";
 
 @Component({
   selector: 'app-accueil',
@@ -8,6 +7,6 @@ import {UserManagerService} from "../user-manager.service";
 })
 export class AccueilComponent {
 
-  constructor(public userManager: UserManagerService) {
+  constructor(public service: GetDataQuestionService, public userManager: UserManagerService) {
   }
 }
