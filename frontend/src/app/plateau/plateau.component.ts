@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {UserManagerService} from "../user-manager.service";
 import {WebSocketService} from "../web-socket.service";
 import {Game} from "../models/Game";
+import {Carte} from "../models/Carte";
 
 @Component({
   selector: 'app-plateau', templateUrl: './plateau.component.html', styleUrls: ['./plateau.component.css']
@@ -12,6 +13,7 @@ export class PlateauComponent implements OnInit {
 
   res = 4;
   game?: Game
+  carte?: Carte;
 
   constructor(private questionService: GetDataQuestionService, private route: ActivatedRoute, private router: Router, userManager: UserManagerService, private websocketService: WebSocketService) {
     if (!userManager.user) {
@@ -46,6 +48,11 @@ export class PlateauComponent implements OnInit {
       if (!exists) this.router.navigateByUrl('/')
     }, () => {
       this.router.navigateByUrl('/')
+    })
+
+    this.questionService.getQuestion().subscribe(value => {
+      console.log(value)
+      this.carte = value
     })
   }
 
