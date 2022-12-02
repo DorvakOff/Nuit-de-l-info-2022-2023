@@ -15,6 +15,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {LoginPageComponent} from "./login-page/login-page.component";
 import {BusyIndicatorComponent} from "./busy-indicator/busy-indicator.component";
 import {CreateGameComponent} from "./create-game/create-game.component";
+import {ContactComponent} from "./contact/contact.component";
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {CreateGameComponent} from "./create-game/create-game.component";
     NavbarComponent,
     FooterComponent,
     DesComponent,
-    CreateGameComponent
+    CreateGameComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
