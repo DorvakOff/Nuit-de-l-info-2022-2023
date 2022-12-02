@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {GetDataQuestionService} from "../get-data-question.service";
+import {UserManagerService} from "../user-manager.service";
 
 @Component({
   selector: 'app-accueil',
